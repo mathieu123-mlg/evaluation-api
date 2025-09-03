@@ -56,10 +56,8 @@ paths:
           content:
             application/json:
               schema:
-                type:
-                items:
-                  $ref: '#/components/schemas/Phone'
-
+                type: object
+                example: { "error": "ID NOT FOUND"}
 
 components:
   schemas:
