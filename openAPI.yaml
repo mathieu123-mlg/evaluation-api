@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: STD24162
+  description: This is a specification od STD24162
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8000'
+paths:
+  /health:
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: OK
+  /phones:
+    post:
+      requestBody:
+        $ref: '#/components/schemas/Phone'
+      responses:
+        200:
+          description: CREATED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Phone'
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Phone'
+  /phones/{id}:
+    parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type:
+                items:
+                  $ref: '#/components/schemas/Phone'
+        404:
+          description: ID NOT FOUND
+          content:
+            application/json:
+              schema:
+                type:
+                items:
+                  $ref: '#/components/schemas/Phone'
+
+
+components:
+  schemas:
+    Characteristic:
+      type: object
+      properties:
+        ram_memory:
+          type: integer
+        rom_memory:
+          type: integer
+    Phone:
+      type: array
+      properties:
+        identifier:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        characteristics:
+          $ref: '#/components/schemas/Characteristic'
+
+
