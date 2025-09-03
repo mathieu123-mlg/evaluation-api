@@ -3,7 +3,10 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.9 (hello-word-api-python)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (hello-word-api-python)" project-jdk-type="Python SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" project-jdk-name="Python 3.13 (.venv)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="PythonCompatibilityInspectionAdvertiser">
+    <option name="version" value="3" />
   </component>
 </project>
